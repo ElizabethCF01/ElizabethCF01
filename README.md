@@ -1,5 +1,7 @@
 # 💫 About Me:
-🔭 I’m currently working on web development<br>👯 I’m looking to collaborate on projects about learning and practice programming<br>🌱 I’m currently learning mobile development<br>💬 Ask me about 
+🔭 I’m currently working on web development<br>🚀Excited to collaborate on open source educational projects and tools to practice programming<br>🌱 I’m currently learning mobile development 
+
+![image](https://github.com/user-attachments/assets/2e4c11d1-1839-4862-bf63-6b427c1f97e5)
 
 
 ## 🌐 Socials:
