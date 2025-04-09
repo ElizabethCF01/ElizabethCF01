@@ -1,3 +1,13 @@
+---
+import { ClientRouter } from "astro:transitions";
+interface Props {
+  nextPage: string;
+  b1Class?: string;
+}
+
+const { nextPage, b1Class = "rotate-45" } = Astro.props as Props;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,6 +16,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/assets/css/global.css" />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
     <title>Astro Basics</title>
   </head>
   <body class="w-full bg-center z-0">
@@ -52,11 +63,12 @@
             <div class="line3"></div>
           </div>
           <div class="buttons_div">
-            <div class="">
+            <a href={nextPage} class="z-10">
               <div class="b1 flex items-center justify-center">
-                <div class="b1-line rotate-45"></div>
+                <div class={`b1-line  transition duration-500 ease ${b1Class}`}>
+                </div>
               </div>
-            </div>
+            </a>
             <div class="b2"><div class="b2-line"></div></div>
             <div class="speakers">
               <div class="g1">
@@ -77,15 +89,44 @@
     </div>
   </body>
 </html>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    // This runs on first page load and after every navigation.
+    const content = document.querySelector(".content");
+    if (content) {
+      content.classList.add("opacity-0");
+      setTimeout(() => {
+        content.classList.replace("opacity-0", "opacity-100");
+      }, 800);
+    }
+  });
+</script>
 
 <style>
+  html {
+    --s: 61px; /* control the size*/
+    --c1: #7ca4b1;
+    --c2: #a8cddc;
+
+    --_c: var(--c1) calc(100% - var(--s) / 2) 99%, #0000;
+    --_g: var(--s), #0000 calc(99% - var(--s) / 2), var(--_c);
+    background:
+      radial-gradient(var(--s) at 100% var(--_g)),
+      radial-gradient(calc(var(--s) / 4) at 50% calc(100% / 3), var(--_c))
+        var(--s) 0,
+      radial-gradient(var(--s) at 0% var(--_g)) 0 calc(3 * var(--s)) var(--c2);
+    background-size:
+      calc(2 * var(--s)) calc(9 * var(--s) / 4),
+      calc(2 * var(--s)) calc(3 * var(--s) / 4);
+  }
   html,
   body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/src/assets/images/flowers-paper-bg.jpg");
+
+    /* background-image: url("/src/assets/images/flowers-paper-bg.jpg");*/
   }
 
   /* From Uiverse.io by Praashoo7 */
@@ -549,3 +590,4 @@
     margin-top: 0.8em;
   } */
 </style>
+<style is:global></style>

@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import EliHero1 from "../assets/images/eli-hero-img-1.png";
+import EliHero2 from "../assets/images/eli-hero-img-2.png";
+import EliHero3 from "../assets/images/eli-hero-img-3.png";
+---
+
+<div
+  class="content opacity-0 text-white relative z-10 w-full h-full flex bg-center bg-stone-900 rounded-[18px] border-black border bg-cover overflow-hidden"
+>
+  <div class="bg-static w-full h-full absolute"></div>
+  <div class="w-full h-full absolute p-10 flex flex-col items-start text-white">
+    <div class="flex flex-col items-start text-start">
+      <div class="flex gap-12">
+        <div class="w-2/3">
+          <h1 class="font-mono text-2xl glitch-text">
+            {">"} About me
+          </h1>
+          <p class="mt-6 font-normal">
+            Hello world! 👋 I'm Elizabeth Calzadilla Fernández, a 23-year-old
+            software engineer streaming live from beautiful Barcelona. 🌆 My
+            main signal: Frontend Development 📡 I tune into Astro, Vue.js and
+            TypeScript frequencies to create interfaces that make users say
+            "Wow!" 🤩
+          </p>
+          <p class="mt-6 font-normal">When I'm not coding, you can find me:</p>
+          <ul class="list-disc list-inside mt-2">
+            <li class="mt-1 font-normal">
+              Exploring the streets of Barcelona in search of the best paella 🥘
+            </li>
+            <li class="mt-1 font-normal">
+              Debugging my skills in the latest video game 🎮
+            </li>
+            <li class="mt-1 font-normal">
+              Making "git commit" to new tech knowledge 🧠
+            </li>
+          </ul>
+          <p class="mt-6 font-normal">
+            Always looking for new challenges and connections. Ready to tune
+            into my frequency and create something amazing together? 🚀
+          </p>
+        </div>
+        <div class="w-1/3 pl-6 h-full relative z-[-1]">
+          <Image
+            src={EliHero2}
+            alt="Elizabeth Calzadilla Fernández"
+            class="rotate-6 w-64 absolute -top-4 -right-12"
+          />
+          <Image
+            src={EliHero1}
+            alt="Elizabeth Calzadilla Fernández"
+            class="-rotate-6 w-72 absolute -bottom-16 right-12"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-static {
+    background:
+      repeating-radial-gradient(#f4ece5 0 0.0001%, #3a190270 0 0.0002%) 50% 0/2500px
+        2500px,
+      repeating-conic-gradient(#efe7e1 0 0.0001%, #2c170970 0 0.0002%) 60% 60%/2500px
+        2500px;
+    background-blend-mode: difference;
+    opacity: 0.07;
+    animation: b 1s infinite alternate;
+  }
+  @keyframes b {
+    100% {
+      background-position:
+        50% 0,
+        60% 50%;
+    }
+  }
+</style>

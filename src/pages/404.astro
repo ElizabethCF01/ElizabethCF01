@@ -1,0 +1,117 @@
+---
+import AboutSection from "../components/AboutSection.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout nextPage="/" b1Class="rotate-90">
+  <div
+    class="content relative w-full h-full flex bg-center rounded-[18px] border-black border bg-cover overflow-hidden"
+  >
+    <div class="w-full h-full absolute p-10 flex items-center justify-center">
+      <div style="font-size: 10rem;" class="font-bold z-10 text-stone-900">
+        404
+      </div>
+    </div>
+    <div class="bg-static w-full h-full absolute z-10"></div>
+  </div>
+</Layout>
+<style>
+  .content {
+    position: relative;
+    background: linear-gradient(
+      to right,
+      #002fc6 0%,
+      #002bb2 14.2857142857%,
+      #3a3a3a 14.2857142857%,
+      #303030 28.5714285714%,
+      #ff0afe 28.5714285714%,
+      #f500f4 42.8571428571%,
+      #6c6c6c 42.8571428571%,
+      #626262 57.1428571429%,
+      #0affd9 57.1428571429%,
+      #00f5ce 71.4285714286%,
+      #3a3a3a 71.4285714286%,
+      #303030 85.7142857143%,
+      white 85.7142857143%,
+      #fafafa 100%
+    );
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #252525;
+    letter-spacing: 0.15em;
+    text-align: center;
+    overflow: hidden;
+  }
+  .content:before,
+  .content:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  .content:before {
+    top: 0;
+    height: 68.4782608696%;
+    background: linear-gradient(
+      to right,
+      white 0%,
+      #fafafa 14.2857142857%,
+      #ffe60a 14.2857142857%,
+      #f5dc00 28.5714285714%,
+      #0affd9 28.5714285714%,
+      #00f5ce 42.8571428571%,
+      #10ea00 42.8571428571%,
+      #0ed600 57.1428571429%,
+      #ff0afe 57.1428571429%,
+      #f500f4 71.4285714286%,
+      #ed0014 71.4285714286%,
+      #d90012 85.7142857143%,
+      #002fc6 85.7142857143%,
+      #002bb2 100%
+    );
+  }
+  .content:after {
+    bottom: 0;
+    height: 21.7391304348%;
+    background: linear-gradient(
+      to right,
+      #006c6b 0%,
+      #005857 16.6666666667%,
+      white 16.6666666667%,
+      #fafafa 33.3333333333%,
+      #001b75 33.3333333333%,
+      #001761 50%,
+      #6c6c6c 50%,
+      #626262 66.6666666667%,
+      #929292 66.6666666667%,
+      #888888 83.3333333333%,
+      #3a3a3a 83.3333333333%,
+      #303030 100%
+    );
+  }
+
+  .bg-static {
+    background:
+      repeating-radial-gradient(#f4ece5 0 0.0001%, #3a190283 0 0.0002%) 50% 0/2500px
+        2500px,
+      repeating-conic-gradient(#efe7e1 0 0.0001%, #2c170988 0 0.0002%) 60% 60%/2500px
+        2500px;
+    background-blend-mode: difference;
+    opacity: 0.07;
+    animation: b 1s infinite alternate;
+  }
+  @keyframes b {
+    100% {
+      background-position:
+        50% 0,
+        60% 50%;
+    }
+  }
+</style>
